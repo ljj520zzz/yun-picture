@@ -1,0 +1,61 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: yun-picture-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: myusername
+    password: mypassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  configuration:
+    # MyBatis 配置
+    map-underscore-to-camel-case: false
+    #仅在开发是打印日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+    global-config:
+      # 全局配置
+      db-config:
+        logic-delete-field: isDeleted
+        logic-delete-value: 1
+        logic-not-delete-value: 0
+#接口文档配置
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+
+    version: v1.0
+    group:
+      default:
+        group-name: 默认分组
+        api-rule: package
+        api-rule-resources:
+          - com.ljj.yunpicturebackend.controller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
